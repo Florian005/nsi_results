@@ -2,7 +2,7 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 
 // Copiez les mêmes URL/KEY que dans `script.js` (attention à la sécurité des clés)
 const supabaseUrl = 'https://hzrmxqqdkeyhfwxtcfwf.supabase.co';
-const supabaseKey = 'ANON_KEY';
+const supabaseKey = ANON_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Sélecteurs
@@ -124,4 +124,5 @@ refreshBtn.addEventListener('click', () => fetchResults());
 
 // Chargement initial
 fetchResults();
+
 
