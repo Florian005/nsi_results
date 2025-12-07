@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Résultats du sondage NSI</title>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    </head>
+    <body>
+        <div id="topbar">Résultats du sondage NSI</div>
+
+        <section id="results">
+            <h2>Résultats du sondage</h2>
+            <div id="resultsMessage"></div>
+            <div class="summary">
+                <div class="card">Total réponses: <strong id="totalCount">0</strong></div>
+                <div class="card">Boire en cours (oui): <strong id="c1Count">0</strong></div>
+                <div class="card">Cours intéressant (oui): <strong id="c2Count">0</strong></div>
+                <div class="card">Charge travail (oui): <strong id="c3Count">0</strong></div>
+                <div class="card">Matériel bon état (oui): <strong id="c4Count">0</strong></div>
+            </div>
+
+            <div class="bars">
+                <div class="bar-row">Boire en cours: <div class="bar"><div id="bar1" class="fill"></div></div></div>
+                <div class="bar-row">Cours intéressant: <div class="bar"><div id="bar2" class="fill"></div></div></div>
+                <div class="bar-row">Charge travail: <div class="bar"><div id="bar3" class="fill"></div></div></div>
+                <div class="bar-row">Matériel: <div class="bar"><div id="bar4" class="fill"></div></div></div>
+            </div>
+
+            <button id="refreshResults">Rafraîchir les résultats</button>
+
+            <h3>Réponses récentes</h3>
+            <table id="responsesTable">
+                <thead>
+                    <tr><th>#</th><th>Prénom</th><th>Nom</th><th>Email</th><th>Boire</th><th>Cours</th><th>Charge</th><th>Matériel</th><th>Remarques</th><th>Date</th></tr>
+                </thead>
+                <tbody id="responsesBody"></tbody>
+            </table>
+        </section>
+
+        <script src="results_script.js" type="module"></script>
+    </body>
+</html>
