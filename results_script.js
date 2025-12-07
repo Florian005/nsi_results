@@ -55,7 +55,6 @@ async function fetchResults() {
             setBar(bar2, 0);
             setBar(bar3, 0);
             setBar(bar4, 0);
-            responsesBody.innerHTML = '';
             resultsMessage.textContent = 'Aucune réponse pour le moment.';
             return;
         }
@@ -76,27 +75,7 @@ async function fetchResults() {
         setBar(bar3, (c3/total)*100);
         setBar(bar4, (c4/total)*100);
 
-        // Remplir le tableau des réponses
-        responsesBody.innerHTML = '';
-        rows.forEach((r, idx) => {
-            const tr = document.createElement('tr');
-            const date = r.created_at ? new Date(r.created_at).toLocaleString() : '';
-            tr.innerHTML = `
-                <td>${idx + 1}</td>
-                <td>${escapeHTML(r.first_name || '')}</td>
-                <td>${escapeHTML(r.name || '')}</td>
-                <td>${escapeHTML(r.email || '')}</td>
-                <td>${r.choice_1 ? 'oui' : 'non'}</td>
-                <td>${r.choice_2 ? 'oui' : 'non'}</td>
-                <td>${r.choice_3 ? 'oui' : 'non'}</td>
-                <td>${r.choice_4 ? 'oui' : 'non'}</td>
-                <td>${escapeHTML(r.remarques || '')}</td>
-                <td>${escapeHTML(date)}</td>
-            `;
-            responsesBody.appendChild(tr);
-        });
-
-        resultsMessage.textContent = `Affichage des ${total} réponses récentes.`;
+        resultsMessage.textContent = `${total} réponse${total > 1 ? 's' : ''}.`;
 
     } catch (err) {
         console.error('Erreur en récupérant les résultats :', err);
