@@ -65,10 +65,10 @@ async function fetchResults() {
         const c4 = rows.filter(r => r.choice_4).length;
 
         totalCountEl.textContent = total;
-        c1CountEl.textContent = c1;
-        c2CountEl.textContent = c2;
-        c3CountEl.textContent = c3;
-        c4CountEl.textContent = c4;
+        c1CountEl.textContent = `${c1}/${total}`;
+        c2CountEl.textContent = `${c2}/${total}`;
+        c3CountEl.textContent = `${c3}/${total}`;
+        c4CountEl.textContent = `${c4}/${total}`;
 
         setBar(bar1, (c1/total)*100);
         setBar(bar2, (c2/total)*100);
